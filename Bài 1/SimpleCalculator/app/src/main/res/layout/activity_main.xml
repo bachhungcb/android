@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://tools.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#222222"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:text="0"
+        android:textColor="@android:color/white"
+        android:textSize="60sp"
+        android:gravity="end"
+        android:padding="8dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <LinearLayout
+        android:id="@+id/row1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        app:layout_constraintTop_toBottomOf="@id/tvResult"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/row2"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp">
+
+        <Button style="@style/CalculatorButtonOperator" android:id="@+id/btnCE" android:text="CE"/>
+        <Button style="@style/CalculatorButtonOperator" android:id="@+id/btnC" android:text="C"/>
+        <Button style="@style/CalculatorButtonOperator" android:id="@+id/btnBS" android:text="BS"/>
+        <Button style="@style/CalculatorButtonOperator" android:id="@+id/btnDivide" android:text="/"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/row2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        app:layout_constraintTop_toBottomOf="@id/row1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/row3"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp">
+
+        <Button style="@style/CalculatorButton" android:id="@+id/btn7" android:text="7"/>
+        <Button style="@style/CalculatorButton" android:id="@+id/btn8" android:text="8"/>
+        <Button style="@style/CalculatorButton" android:id="@+id/btn9" android:text="9"/>
+        <Button style="@style/CalculatorButtonOperator" android:id="@+id/btnMultiply" android:text="x"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/row3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        app:layout_constraintTop_toBottomOf="@id/row2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/row4"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp">
+
+        <Button style="@style/CalculatorButton" android:id="@+id/btn4" android:text="4"/>
+        <Button style="@style/CalculatorButton" android:id="@+id/btn5" android:text="5"/>
+        <Button style="@style/CalculatorButton" android:id="@+id/btn6" android:text="6"/>
+        <Button style="@style/CalculatorButtonOperator" android:id="@+id/btnMinus" android:text="-"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/row4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        app:layout_constraintTop_toBottomOf="@id/row3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/row5"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp">
+
+        <Button style="@style/CalculatorButton" android:id="@+id/btn1" android:text="1"/>
+        <Button style="@style/CalculatorButton" android:id="@+id/btn2" android:text="2"/>
+        <Button style="@style/CalculatorButton" android:id="@+id/btn3" android:text="3"/>
+        <Button style="@style/CalculatorButtonOperator" android:id="@+id/btnPlus" android:text="+"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/row5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        app:layout_constraintTop_toBottomOf="@id/row4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp">
+
+        <Button style="@style/CalculatorButton" android:id="@+id/btnPlusMinus" android:text="+/-"/>
+        <Button style="@style/CalculatorButton" android:id="@+id/btn0" android:text="0"/>
+        <Button style="@style/CalculatorButton" android:id="@+id/btnDot" android:text="."/>
+        <Button style="@style/CalculatorButtonOperator" android:id="@+id/btnEquals" android:text="="/>
+    </LinearLayout>
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:constraint_referenced_ids="row1,row2,row3,row4,row5"
+        app:layout_constraintTop_toBottomOf="@id/tvResult"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:flow_verticalGap="8dp"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
