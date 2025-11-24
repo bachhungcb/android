@@ -19,7 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "StudentManagement"
-include(":app")
+rootProject.name = "PlaystoreClone"
 include(":app")
  
