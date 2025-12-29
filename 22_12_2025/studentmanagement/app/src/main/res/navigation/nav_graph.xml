@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/studentListFragment">
+
+    <fragment
+        android:id="@+id/studentListFragment"
+        android:name="com.example.studentmanagent.StudentListFragment"
+        android:label="Danh sách"
+        tools:layout="@layout/fragment_student_list">
+        <action
+            android:id="@+id/action_list_to_form"
+            app:destination="@id/studentFormFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/studentFormFragment"
+        android:name="com.example.studentmanagent.StudentFormFragment"
+        android:label="Form Sinh Viên"
+        tools:layout="@layout/fragment_student_form">
+        <argument
+            android:name="student"
+            app:argType="com.example.studentmanagent.Student"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+</navigation>
